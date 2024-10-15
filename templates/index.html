@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light">
+
+    <!-- Botão de Tema -->
+    <button id="tema-toggle" onclick="alternarTema()">🌙</button>
+
+    <!-- Formulário de Login -->
+    <div id="login-form">
+        <h2>Login</h2>
+        <form>
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Conteúdo da Aplicação -->
+    <div id="app-content" style="display: none;">
+
+        <!-- Barra superior com a barra de pesquisa, filtros -->
+        <div class="top-bar">
+            <input type="text" id="search-bar" placeholder="Pesquise sua tarefa" oninput="pesquisarTarefas()">
+            
+            <!-- Dropdown de filtro -->
+            <div class="dropdown">
+                <button class="dropbtn">Filtrar</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="filtrarTarefas('todas')">Todas</a>
+                    <a href="#" onclick="filtrarTarefas('pendentes')">Pendentes</a>
+                    <a href="#" onclick="filtrarTarefas('concluidas')">Concluídas</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulário para adicionar uma nova tarefa -->
+        <form id="form-tarefa">
+            <input type="text" id="titulo-tarefa" placeholder="Adicionar uma nova tarefa" required>
+            <button type="submit">+</button>
+        </form>
+
+        <!-- Lista de tarefas -->
+        <ul id="lista-tarefas"></ul>
+
+        <!-- Modal de confirmação para exclusão (opcional, se estiver usando) -->
+        <!-- ... -->
+
+    </div>
+
+    <!-- Script principal -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
